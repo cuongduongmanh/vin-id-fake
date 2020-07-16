@@ -5,6 +5,9 @@ import { cardStyle, defaultHeader } from './styles';
 const SplashStack = createSwitchNavigator({
 	SplashScreenOne: {
 		getScreen: () => require('../views/splash/splashOne').default
+	},
+	Login: {
+		getScreen: () => require('../views/Login').default
 	}
 }, {
 	defaultNavigationOptions: defaultHeader,

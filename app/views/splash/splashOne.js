@@ -1,11 +1,13 @@
 import React from 'react';
 import {
-	View, Animated, Easing, StyleSheet, Image
+	View, StyleSheet, Image
 } from 'react-native';
 import { Pages } from 'react-native-pages';
-import { width, height } from '../../utils/scalling';
+import PropTypes from 'prop-types';
+import { width } from '../../utils/scalling';
 import { animateNextTransition } from '../../utils/layoutAnimation';
-import Text from '../../containers/Text';
+import I18n from '../../i18n';
+import Button from '../../containers/Button';
 
 const styles = StyleSheet.create({
 	image: {
@@ -21,13 +23,17 @@ const styles = StyleSheet.create({
 });
 
 class SplashScreenOne extends React.PureComponent {
-	onMoveToNext = () => {
-		const { navigation } = this.props;
-		navigation.navigate('SplashScreenTwo', animateNextTransition);
+	static propTypes = {
+		navigation: PropTypes.object
 	};
 
-	componentDidMount(): void {
-	}
+	static defaultProps = {
+	};
+
+	onMoveToNext = () => {
+		const { navigation } = this.props;
+		navigation.navigate('Login', animateNextTransition);
+	};
 
 	render() {
 		return (
@@ -44,7 +50,14 @@ class SplashScreenOne extends React.PureComponent {
 						<Image source={require('../../assets/background/banner-3.jpg')} style={styles.image} />
 					</Pages>
 				</View>
-				<Text langID='facebook' style={{ color: 'yellow' }} />
+				<Button
+					style={{ marginTop: 35 }}
+					title={I18n.t('enter_phone')}
+					type='primary'
+					onPress={this.onMoveToNext}
+					theme='dark'
+				/>
+
 			</View>
 		);
 	}
