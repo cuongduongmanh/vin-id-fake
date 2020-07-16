@@ -1,0 +1,22 @@
+import { NativeModules } from 'react-native';
+import Reactotron from 'reactotron-react-native';
+import { reactotronRedux } from 'reactotron-redux';
+import sagaPlugin from 'reactotron-redux-saga';
+
+if (__DEV__) {
+	const { scriptURL } = NativeModules.SourceCode;
+	// const scriptHostname = '192.168.25.39';
+	const scriptHostname = scriptURL.split('://')[1].split(':')[0];
+	Reactotron
+		.configure({ host: scriptHostname })
+		.useReactNative()
+		.use(reactotronRedux())
+		.use(sagaPlugin())
+		.connect();
+	// Running on android device
+	// $ adb reverse tcp:9090 tcp:9090
+	Reactotron.clear();
+	console.warn = Reactotron.log;
+	console.log = Reactotron.log;
+	console.disableYellowBox = true;
+}
