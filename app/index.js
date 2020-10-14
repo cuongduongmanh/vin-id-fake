@@ -1,9 +1,11 @@
-import React, { useEffect } from 'react';
+import * as React from 'react';
 import {
 	StatusBar,
 	StyleSheet,
-	View
-} from 'react-native';
+	Text,
+	View } from 'react-native';
+import { createAppContainer } from 'react-navigation';
+import { createBottomTabNavigator } from 'react-navigation-tabs';
 import SplashScreen from 'react-native-splash-screen';
 import { isIOS } from './utils/deviceInfo';
 import AppContainer from './navigation';
@@ -23,17 +25,34 @@ const styles = StyleSheet.create({
 	}
 });
 
-const App = () => {
-	useEffect(() => {
-		SplashScreen.hide();
-	}, []);
+class HomeScreen extends React.Component {
+	render(){
+		return (
+			<View style={styles.container}>
+				{isIOS && <StatusBar barStyle='dark-content' />}
+				<AppContainer />
+			</View>
+		  );
+	}
+}
 
-	return (
-		<View style={styles.container}>
-			{isIOS && <StatusBar barStyle='dark-content' />}
-			<AppContainer />
-		</View>
-	);
-};
+class SettingsScreen extends React.Component {
+	render(){
+		return (
+			<View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+			  <Text>Settings!</Text>
+			</View>
+		  );
+	}
+}
 
-export default App;
+const Tab = createBottomTabNavigator({
+	Home:{
+		screen: HomeScreen,
+	},
+	Settings:{
+		screen : SettingsScreen,
+	}
+});
+
+export default createAppContainer(Tab);
