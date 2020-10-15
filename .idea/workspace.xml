@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="8a11fcb8-e2be-4d18-bccd-a0649e9a9f8c" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/i18n/locales/en.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/i18n/locales/en.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/i18n/locales/jp.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/i18n/locales/jp.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/i18n/locales/vi.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/i18n/locales/vi.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/views/Login/index.js" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/Login/index.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -46,6 +51,7 @@
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.standard" value="" />
     <property name="nodejs_package_manager_path" value="yarn" />
+    <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -80,7 +86,10 @@
       <updated>1594277154561</updated>
       <workItem from="1594277155872" duration="6383000" />
       <workItem from="1594344845870" duration="2418000" />
-      <workItem from="1594871431444" duration="10409000" />
+      <workItem from="1594871431444" duration="10627000" />
+      <workItem from="1594978726268" duration="3310000" />
+      <workItem from="1595211948246" duration="1460000" />
+      <workItem from="1602728386864" duration="421000" />
     </task>
     <servers />
   </component>
@@ -92,7 +101,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>

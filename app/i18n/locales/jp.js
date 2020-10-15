@@ -4,5 +4,8 @@ export default {
 	enter_phone: 'Enter your phone number',
 	null: '',
 	enter: 'Nhập số điện thoại',
-	your_phone: 'Số điện thoại của bạn'
+	your_phone: 'Số điện thoại của bạn',
+	Login: 'Login',
+	Oops: 'Oops',
+	invalid_number: 'Invalid Number'
 };
