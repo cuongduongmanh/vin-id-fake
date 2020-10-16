@@ -1,6 +1,7 @@
 import { createAppContainer, createSwitchNavigator } from 'react-navigation';
 import { createStackNavigator } from 'react-navigation-stack';
 import { cardStyle, defaultHeader } from './styles';
+import TabNavigator from './TabNavigator';
 
 const SplashStack = createSwitchNavigator({
 	SplashScreenOne: {
@@ -16,8 +17,15 @@ const SplashStack = createSwitchNavigator({
 	initialRouteName: 'SplashScreenOne'
 });
 
+const TabStack = createStackNavigator({
+	Tab: TabNavigator
+}, {
+	headerMode: 'none'
+});
+
 const Root = createSwitchNavigator({
-	SplashStack
+	SplashStack,
+	TabStack
 }, {
 	initialRouteName: 'SplashStack'
 });

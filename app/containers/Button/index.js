@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { StyleSheet } from 'react-native';
 import { RectButton } from 'react-native-gesture-handler';
-
 import Text from '../Text';
 import { themes } from '../../constants/colors';
 import sharedStyles from '../../views/Styles';

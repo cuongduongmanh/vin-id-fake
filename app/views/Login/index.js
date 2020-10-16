@@ -3,7 +3,7 @@ import {
 	View, Alert, Image, Text, SafeAreaView
 } from 'react-native';
 import PropTypes from 'prop-types';
-import { width } from '../../utils/scalling';
+import {height, width} from '../../utils/scalling';
 import { animateNextTransition } from '../../utils/layoutAnimation';
 import I18n from '../../i18n';
 import Button from '../../containers/Button';
@@ -36,17 +36,20 @@ class LoginView extends React.PureComponent {
     };
 
     submit = () => {
-        if (!this.valid()) {
-            return;
-        }
-
-        // const { user, password, code } = this.state;
-        // const { loginRequest } = this.props;
-        Keyboard.dismiss();
-
-        // call login API
-        // loginRequest({ user, password, code });
-        analytics().logEvent('login');
+        const { navigation } = this.props;
+        navigation.navigate('TabStack', animateNextTransition);
+        console.log('=====push');
+        // if (!this.valid()) {
+        //     return;
+        // }
+        //
+        // // const { user, password, code } = this.state;
+        // // const { loginRequest } = this.props;
+        // Keyboard.dismiss();
+        //
+        // // call login API
+        // // loginRequest({ user, password, code });
+        // analytics().logEvent('login');
     };
 
     render() {
@@ -66,29 +69,31 @@ class LoginView extends React.PureComponent {
                 testID='login-view'
                 forceInset={{ vertical: 'never' }}
             >
-                <Text style={[sharedStyles.loginTitle, sharedStyles.textBold, { color: themes[theme].titleText }]}>{I18n.t('Login')}</Text>
-                <TextInput
-                    autoFocus
-                    placeholder={Accounts_EmailOrUsernamePlaceholder || I18n.t('Username_or_email')}
-                    keyboardType='email-address'
-                    returnKeyType='next'
-                    iconLeft='at'
-                    onChangeText={value => this.setState({ phone: value })}
-                    testID='login-view-email'
-                    textContentType='username'
-                    autoCompleteType='username'
-                    theme={theme}
-                    value={phone}
-                />
-                <Button
-                    title={I18n.t('Login')}
-                    type='primary'
-                    onPress={this.submit}
-                    testID='login-view-submit'
-                    loading={isFetching}
-                    disabled={!this.valid()}
-                    theme={theme}
-                />
+                <View style={{ width: width, height: height }}>
+                    <Text style={[sharedStyles.loginTitle, sharedStyles.textBold, { color: themes[theme].titleText }]}>{I18n.t('Login')}</Text>
+                    <TextInput
+                        autoFocus
+                        placeholder={Accounts_EmailOrUsernamePlaceholder || I18n.t('Username_or_email')}
+                        keyboardType='email-address'
+                        returnKeyType='next'
+                        iconLeft='at'
+                        onChangeText={value => this.setState({ phone: value })}
+                        testID='login-view-email'
+                        textContentType='username'
+                        autoCompleteType='username'
+                        theme={theme}
+                        value={phone}
+                    />
+                    <Button
+                        title={I18n.t('Login')}
+                        type='primary'
+                        onPress={this.submit}
+                        testID='login-view-submit'
+                        loading={isFetching}
+                        disabled={!this.valid()}
+                        theme={theme}
+                    />
+                </View>
             </SafeAreaView>
         );
     }

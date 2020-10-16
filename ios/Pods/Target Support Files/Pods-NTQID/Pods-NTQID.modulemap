@@ -1,6 +1,0 @@
-module Pods_NTQID {
-  umbrella header "Pods-NTQID-umbrella.h"
-
-  export *
-  module * { export * }
-}

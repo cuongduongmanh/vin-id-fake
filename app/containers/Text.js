@@ -23,7 +23,7 @@ const FormattedText = React.forwardRef(({
 });
 
 FormattedText.propTypes = {
-	style: PropTypes.object || PropTypes.array,
+	style: PropTypes.array,
 	children: PropTypes.string,
 	debug: PropTypes.bool,
 	langID: PropTypes.string
